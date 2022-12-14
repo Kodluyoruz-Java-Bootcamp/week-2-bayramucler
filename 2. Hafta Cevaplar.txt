@@ -1,0 +1,100 @@
+Soru 2) Creational design pattern'ler.
+
+Objelerin yaratılma şekilleri ile patternlerdir: 
+1) Factory Method Pattern
+2) Abstract Factory Pattern
+3) Singleton Pattern
+4) Prototype Pattern
+5) Builder Pattern
+6) Object Pool Pattern
+
+
+1) Factory Pattern
+Nesne üretme işini bir sınıfta toplar. Nesne türüne göre değişen kod yazmamızı önler.
+
+public class MyFactory {
+ public MyObject createObject(String type) {
+   if (type.equals("A")) {
+     return new MyObjectA();
+   } else if (type.equals("B")) {
+     return new MyObjectB();
+   }
+   // Diğer nesne türleri için de benzer koşullar
+ }
+}
+
+
+
+3) Singleton Pattern
+Bir sınıftan sadece bir nesnenin üretilmesi ile ilgilidir;
+
+public class MySingleton {
+ private static MySingleton instance = null;
+
+ private MySingleton() {}
+
+ public static MySingleton getInstance() {
+   if (instance == null) {
+     instance = new MySingleton();
+   }
+   return instance;
+ }
+
+ // Sınıfın diğer metodları ve işlevselliği
+}
+
+
+
+Soru 5) Spring frameworkünün kullandığı design patternlar neler? 
+
+En yaygın kullanılanlar;
+Inversion of Control (IoC)
+Dependency Injection (DI)
+Model-View-Controller (MVC)
+
+
+Soru 4) Java dünyasındaki framework’ler ve çözdükleri problemler nedir? Kod Örneklendirini de
+içermelidir.
+
+*Spring:
+Geliştiricilere IOC, DI, MVC gibi tasarım kalıplarını kullanarak uygulama geliştirmeyi kolaylaştıran bir framework'dür.
+Örneğin, aşağıdaki kod ile bir sınıfın bağımlılıklarının nasıl Spring tarafından otomatik olarak yapılandırılacağı gösterilmiştir.
+
+@Component
+public class MyService {
+
+@AutoWired
+private MyDependency dependency;
+
+}
+
+
+*Hibernate:
+Veritabanı erişimi ve veri modellendirme işlemlerini kolaylaştıran bir framework'dür. 
+Örneğin;
+Session session = sessionFactory.openSession();
+MyEntity entity = session.get(MyEntity.class, id);
+
+*Apache Commons: 
+Geliştiricilere yaygın olarak kullanılan işlevsellikleri sunan bir framework'dür. 
+Örneğin, Apache Commons'un Collections bileşeni, Java koleksiyon sınıflarının işlevselliğini genişleterek 
+geliştiricilere daha fazla seçenek sunar. Aşağıdaki kod parçacığında, Apache Commons kullanılarak 
+bir liste içinde bir elemanın nasıl aranacağı gösterilmiştir:
+
+List<String> list = Arrays.asList("apple", "banana", "cherry");
+int index = org.apache.commons.collections.ListUtils.indexOf(list, "banana");
+
+
+
+
+Soru 6) SOA - Web Service - Restful Service - HTTP methods kavramlarını örneklerle açıklayınız.
+
+SOA (Service Oriented Architecture), bir uygulamanın farklı işlevlerini farklı servisler olarak düşünerek tasarlamaya ve bu servisleri bir arada kullanarak uygulama özelliklerini oluşturmaya yönelik bir mimaridir. 
+Örneğin, bir e-ticaret uygulamasında ürünlerin listelenmesi, ürün ayrıntılarının gösterilmesi ve siparişlerin işlenmesi gibi işlevler farklı servisler olarak düşünülebilir.
+Web Service, bir uygulamanın internet üzerinden başka bir uygulamaya erişilebilen bir servisi olarak tanımlanabilir. 
+Örneğin, bir e-ticaret uygulamasında bir ürünün detaylarını göstermek için kullanılan bir servis, bir web servisi olarak düşünülebilir.
+Restful Service, bir web servisinin HTTP protokolüne uygun olarak tasarlandığını ve bu servisin çeşitli işlemleri için HTTP yöntemlerini kullandığını ifade eder. 
+Örneğin, bir e-ticaret uygulamasında bir ürünün detaylarını göstermek için kullanılan bir servis, HTTP GET yöntemini kullanarak istek yapılabilir.
+HTTP metodları, bir web servisinde kullanılabilecek olan işlemleri ifade eder.
+ Örneğin, GET yöntemi bir veriyi almak için kullanılırken, POST yöntemi bir veri göndermek için kullanılabilir. 
+Diğer yaygın olarak kullanılan HTTP metodları arasında PUT, DELETE ve PATCH gibi yöntemler de bulunmaktadır.

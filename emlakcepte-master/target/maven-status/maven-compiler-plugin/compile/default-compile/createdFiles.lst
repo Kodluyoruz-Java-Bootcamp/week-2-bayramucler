@@ -1,0 +1,11 @@
+emlakcepte\model\UserType.class
+emlakcepte\service\RealtyService.class
+emlakcepte\BeanConfig.class
+emlakcepte\model\Realty.class
+emlakcepte\model\RealtyType.class
+emlakcepte\model\User.class
+emlakcepte\service\UserService.class
+emlakcepte\dao\RealtyDao.class
+emlakcepte\Main.class
+emlakcepte\dao\UserDao.class
+emlakcepte\model\Message.class
