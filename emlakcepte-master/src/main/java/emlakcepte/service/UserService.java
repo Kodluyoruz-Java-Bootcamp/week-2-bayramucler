@@ -25,8 +25,8 @@ public class UserService implements EmlakCepteService {
 	}
 
 	@Override
-	public void printAdress(){
-		System.out.println("UserService adress: " + userServiceInstance.hashCode());
+	public void printHashCode(){
+		System.out.println("UserService hashCode: " + userServiceInstance.hashCode());
 	}
 
 	public void createUser(User user) {

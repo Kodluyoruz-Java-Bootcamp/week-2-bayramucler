@@ -35,8 +35,8 @@ public class RealtyService implements EmlakCepteService {
 	private List<SearchHistory> searchHistoryList = new ArrayList<>();
 
 	@Override
-	public void printAdress(){
-		System.out.println("RealtyService adress: " + realtyServiceInstance.hashCode());
+	public void printHashCode(){
+		System.out.println("RealtyService hashCode " + realtyServiceInstance.hashCode());
 	}
 	
 	public void createRealty(Realty realty) {

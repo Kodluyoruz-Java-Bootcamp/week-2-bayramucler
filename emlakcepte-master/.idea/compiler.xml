@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="emlakcepte" />
+        <module name="emlakcepte-master" />
       </profile>
     </annotationProcessing>
   </component>
